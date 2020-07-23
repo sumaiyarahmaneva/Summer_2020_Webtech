@@ -88,4 +88,14 @@
 		}
 		else
 			echo "Degree not selected";
+
+
+		echo "</br>";
+
+		if($_POST['bloodgrp']!="None")
+		{
+			echo "Blood group selected";
+		}
+		else
+			echo "Blood group not selected";
 ?>
