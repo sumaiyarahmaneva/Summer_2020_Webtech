@@ -78,4 +78,14 @@
 			echo "Valid date of birth";
 		else
 			echo "Invalid date of birth";
+
+
+		echo "</br>";
+
+		if(isset($_POST['degree']))
+		{
+			echo "Degree selected";
+		}
+		else
+			echo "Degree not selected";
 ?>
