@@ -60,4 +60,14 @@
 		}
 		else
 			echo "Invalid Email";
+
+
+		echo "</br>";
+
+		if(isset($_POST['gender']))
+		{
+			echo "Gender selected";
+		}
+		else
+			echo "Gender not selected";
 ?>
