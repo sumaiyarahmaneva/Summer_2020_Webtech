@@ -98,4 +98,21 @@
 		}
 		else
 			echo "Blood group not selected";
+
+
+		echo "</br>";
+
+
+		if($_POST['userid']!="" and $_POST['userid']>=0)
+			echo "User Id is valid";
+		else
+			echo "User Id is invalid";
+
+		echo "</br>";
+
+		if($_POST['image']!="")
+			echo "Photo is uploaded";
+		else
+			echo "Photo is not uploaded";
+		echo "</br>";
 ?>
