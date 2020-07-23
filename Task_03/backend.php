@@ -25,4 +25,39 @@
 			echo "Invalid Name";
 
 	}
+
+	echo "</br>";
+		
+		if($_POST['email'] !="")
+		{
+			$c=0;
+			$b= str_split($_POST['email']);
+			for($i=0; $i<count($b); $i++)
+			{
+				if($b[$i]=='@')
+				{
+					$c++;
+				}
+				else
+					continue;
+			}
+			if($c==1)
+			{
+				$d=explode('@', $_POST['email']);
+				$e=explode('.', $d[1]);
+				$f;
+				for($i=0; $i<count($e); $i++)
+				{
+					$f=$e[$i];
+				}
+				if($f=="com")
+					echo "Valid Email";
+				else
+					echo "Invalid Email";
+			}
+			else
+				echo "Invalid Email";
+		}
+		else
+			echo "Invalid Email";
 ?>
