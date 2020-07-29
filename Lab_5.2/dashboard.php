@@ -27,10 +27,10 @@
 		<?php
 			if(!empty($_SESSION))
 			{
-				echo "<p align='right'>Logged in as <a href='profile.html'>".$_SESSION['username']."</a>|<a href='logout.php'>Logout</a></p>";
+				echo "<p align='right'>Logged in as <a href='viewprofile.php'>".$_SESSION['username']."</a>|<a href='logout.php'>Logout</a></p>";
 			}
 			else
-				echo "<p align='right'>Logged in as <a href='profile.html'>".$_COOKIE['username']."</a>|<a href='logout.php'>Logout</a></p>";
+				echo "<p align='right'>Logged in as <a href='viewprofile.php'>".$_COOKIE['username']."</a>|<a href='logout.php'>Logout</a></p>";
 		?>
 	</fieldset>
 	<fieldset>
