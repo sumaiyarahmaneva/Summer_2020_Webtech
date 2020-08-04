@@ -1,35 +1,34 @@
 <?php
-	session_start();
-
-	if(isset($_POST['submit'])){
-
-		$uname = $_POST['username'];
+    session_start();
+	if(isset($_POST['register']))
+	{
+		$username = $_POST['username'];
+		$id = $_POST['id'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-
-		if(empty($uname) || empty($password) || empty($email)){
-			echo "null submission";
-		}else {
-
+		$confirmpassword = $_POST['confirmPassword'];
+		$usertype = $_POST['usertype'];
 		
-			/*$_SESSION['uname'] 		= $uname;
-			$_SESSION['email'] 		= $email;
-			$_SESSION['password'] 	= $password;
-			$_SESSION['user'] 		= $user;*/
-
-
-			$file = fopen('user.txt', 'a');
-			fwrite($file, $uname.'|'.$password.'|'.$email."/r/n");
-			fclose($file);
-
-
-
-			header('location: login.html');
+		if(empty($id)||empty($password)||empty($email)||empty($confirmpassword)||empty($name)||empty($usertype))
+		{
+			header("location:registration.html");
 		}
-
-	}else{
-		header("location: login.html");
+		else{
+			if($password == $confirmpassword)
+			{
+				$file = fopen('user.txt','a');
+				fwrite($file, $username.'|'.$id.'|'.$password.'|'.$confirmPassword.'|'.$email.'|'.$usertype."/r/n");
+				fclose($file);
+                header("location:login.html");				
+			}
+			else
+			{
+				header("location:registration.html");
+			}
+		}
 	}
-
-
+	else
+	{
+		header("location:login.html");
+	}
 ?>
