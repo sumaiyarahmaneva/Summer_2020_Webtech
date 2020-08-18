@@ -1,20 +1,24 @@
 <?php 
 	session_start();
-	require_once('../php/session_header.php');
+	//require_once('../php/session_header.php');
 	require_once('../service/userService.php');
 
 
 	//add user
 	if(isset($_POST['create'])){
+		$id			= $_POST['id'];
 		$username 	= $_POST['username'];
 		$password 	= $_POST['password'];
 		$email 		= $_POST['email'];
 
-		if(empty($username) || empty($password) || empty($email)){
+		if(empty($id) || empty($username) || empty($password) || empty($email)){
 			header('location: ../views/create.php?error=null_error');
 		}else{
 
+			if(empty(getByID($id)['id']))
+			{
 				$user = [
+					'id'=> $id,
 					'username'=> $username,
 					'password'=> $password,
 					'email'=> $email
@@ -36,20 +40,20 @@
 	//update user
 	if(isset($_POST['edit'])){
 
+		$id 		= $_POST['id'];
 		$username 	= $_POST['username'];
 		$password 	= $_POST['password'];
 		$email 		= $_POST['email'];
-		$id 		= $_POST['id'];
 
 		if(empty($username) || empty($password) || empty($email)){
 			header('location: ../views/edit.php?id={$id}');
 		}else{
 
 			$user = [
+				'id'=> $id,
 				'username'=> $username,
 				'password'=> $password,
 				'email'=> $email,
-				'id'=> $id
 			];
 
 			$status = update($user);
@@ -65,8 +69,8 @@
 	//delete user
 	if(isset($_POST['yes'])){
 
-		$id = $_POST['username'];
-		$status = delete($username);
+		$id = $_POST['id'];
+		$status = delete($id);
 
 		if($status){
 			header('location: ../views/all_users.php?success=done');

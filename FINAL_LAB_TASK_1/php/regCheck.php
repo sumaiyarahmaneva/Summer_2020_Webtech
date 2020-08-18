@@ -3,17 +3,19 @@
 	require_once('../service/userService.php');
 
 	if(isset($_POST['submit'])){
+		$id 		= $_POST['id'];
 		$username 	= $_POST['username'];
 		$password 	= $_POST['password'];
 		$email 		= $_POST['email'];
 
-		if(empty($username) || empty($password) || empty($email)){
+		if( empty($id) || empty($username) || empty($password) || empty($email)){
 			header('location: ../views/register.php?error=null_value');
 		}else{
 
 			if(empty(getByID($username)['username']))
 			{
-				$user = [		
+				$user = [
+					'id'=> $id,	
 					'username'=> $username,
 					'password'=> $password,
 					'email'=> $email

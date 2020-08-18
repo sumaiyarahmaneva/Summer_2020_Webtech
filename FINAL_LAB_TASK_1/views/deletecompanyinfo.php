@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Delete user</title>
+	<title>Delete Company</title>
 </head>
 <body>
 
