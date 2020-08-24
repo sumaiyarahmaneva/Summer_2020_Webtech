@@ -2,19 +2,20 @@
 <html>
 <head>
 	<title>Gender</title>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<form>
+	<form onsubmit="return validation()">
 		<fieldset>
 			<legend>Gender</legend>
 			<table cellpadding="2">
 				<tr>
 					<td>
-						<input type="radio" name="gender" value="Male">Male
-					   	<input type="radio" name="gender" value="Female">Female
-					   	<input type="radio" name="gender" value="Other">Other
+						<input type="radio" id="male" name="gender" value="Male" onclick="clicks()">Male
+					   	<input type="radio" id="female" name="gender" value="Female" onclick="clicks()">Female
+					   	<input type="radio" id="other" name="gender" value="Other" onclick="clicks()">Other
 					</td>
-					<td></td>
+					<td id="show"></td>
 				</tr>
 				<tr>
 					<td><input type="submit" name="submit" value="submit"></td>
