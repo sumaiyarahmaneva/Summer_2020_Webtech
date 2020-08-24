@@ -2,25 +2,26 @@
 <html>
 <head>
 	<title>Profile Picture</title>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<form>
+	<form enctype="multipart/form-data" onsubmit="return validation()">
 		<fieldset>
 			<legend>Profile Picture</legend>
 			<table cellpadding="2">
 				<tr>
 					<td>User Id</td>
 					<td>
-						<input type="text" name="userid">
+						<input type="text" id="userid" name="userid" onkeyup="clicks1()">
 					</td>
-					<td></td>
+					<td id="show1"></td>
 				</tr>
 				<tr>
 					<td>Picture</td>
 					<td>
-						<input type="file" name="picture">
+						<input type="file" id="picture" name="picture" onclick="clicks2()">
 					</td>
-					<td></td>
+					<td id="show2"></td>
 				</tr>
 				<tr>
 					<td colspan="2">
