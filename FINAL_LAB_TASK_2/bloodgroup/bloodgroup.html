@@ -2,14 +2,15 @@
 <html>
 <head>
 	<title>Blood Group</title>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<form>
+	<form onsubmit="return validation()">
 		<table cellpadding="2">
 			<tr>
 				<td>Blood Group</td>
 				<td>
-					<select>
+					<select id="bloodgroup" name="bloodgroup" onclick="clicks()">
 			   			<option value="">None</option>
 			   			<option value="A+">A+</option>
 			   			<option value="A-">A-</option>
@@ -20,7 +21,7 @@
 				   		<option value="O-">O-</option>
 				   	</select>
 					</td>
-				<td></td>
+				<td id="show"></td>
 			</tr>
 			<tr>
 				<th colspan="2">
