@@ -145,6 +145,18 @@ function validation()
 		return false;
 	}
 
+	var show = document.getElementById("show5");
+	var bg = document.getElementById("bloodgroup").value;
+	if( bg != "")
+	{
+		falg = true;
+	}
+	else
+	{
+		show.innerHTML = "Must be selected";
+		return false;
+	}
+
 	return flag;
 
 }
@@ -167,6 +179,11 @@ function clicks3()
 	show.innerHTML = "";
 }
 function clicks4()
+{
+	var show = document.getElementById("show");
+	show.innerHTML = "";
+}
+function clicks5()
 {
 	var show = document.getElementById("show");
 	show.innerHTML = "";
