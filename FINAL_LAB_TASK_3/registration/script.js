@@ -172,6 +172,29 @@ function validation()
 		return false;
 	}
 
+	var show1 = document.getElementById("show7");
+	var show2 = document.getElementById("show7");
+	var picture = document.getElementById("picture").value;
+
+	if( picture != "")
+		{
+			var c = picture.split(".");
+			if( c[1] == "jpg" || c[1] == "png" || c[1] == "jpeg" || c[1] == "JPG" || c[1] == "PNG" || c[1] == "JPEG")
+			{
+				falg = true;
+			}
+			else
+			{
+				show2.innerHTML = "Upload an image file";
+				return false;
+			}
+		}
+		else
+		{
+			show2.innerHTML = "Picture cannot be empty";
+			return false;
+		}
+
 	return flag;
 
 }
@@ -207,4 +230,9 @@ function clicks6()
 {
 	var show = document.getElementById("show");
 	show.innerHTML = "";
+}
+function clicks7()
+{
+	var show2 = document.getElementById("show7");
+	show2.innerHTML = "";
 }
