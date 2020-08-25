@@ -1,6 +1,7 @@
 function validation()
 {
-	var show = document.getElementById("show1");
+	var flag = true;
+	var show1 = document.getElementById("show1");
 	var n = document.getElementById("name").value;
 	if( n != "" )
 	{
@@ -35,36 +36,97 @@ function validation()
 		 		}
 		 		if(c=="valid")
 		 		{
-		 			return true;
+		 			flag = true;
 		 		}
 		 		else
 		 		{
-		 			show.innerHTML = "Can contain a-z or A-Z or dot(.) or dash(-)";
+		 			show1.innerHTML = "Can contain a-z or A-Z or dot(.) or dash(-)";
 		 			return false;	
 		 		}
 		 	}
 		 	else
 		 	{
-				show.innerHTML = "Must start with a letter";
+				show1.innerHTML = "Must start with a letter";
 				return false;
 			}
 		}
 		else
 		{
-		 	show.innerHTML = "Contains at least two words";
+		 	show1.innerHTML = "Contains at least two words";
 		 	return false;
 		}	
 
 	}
 	else
 	{
-		show.innerHTML = "Cannot be empty";
+		show1.innerHTML = "Cannot be empty";
 		return false;
 	}
+
+	var show = document.getElementById("show2");
+	var e = document.getElementById("email").value;
+	if( e != "")
+	{
+		var a=0;
+		for( i=0 ; i < e.length ; i++)
+		{
+			if(e[i]=='@')
+			{
+				a++;
+			}
+			else
+				continue;
+		}
+		if(a==1)
+		{
+			var b = e.split("@");
+			var d = b[1].split(".");
+			var l;
+			for( i=0 ; i < d.length ; i++)
+			{
+				l = d[i];
+			}
+			if( l == "com")
+			{
+				flag =  true;
+			}
+			else
+			{
+				show.innerHTML = "Must be a valid email address";
+				return false;
+			}
+		}
+		else
+		{
+			show.innerHTML = "Must be a valid email address";
+			return  false;
+		}
+
+	}
+	else
+	{
+		show.innerHTML = "Cannot be empty";
+		return  false;
+	}
+
+	return flag;
+
+}
+
+function clicks2()
+{
+	var show = document.getElementById("show2");
+	show.innerHTML = "";
 }
 
 function clicks1()
 {
-	var show = document.getElementById("show1");
+	var show1 = document.getElementById("show1");
+	show1.innerHTML = "";
+}
+
+function clicks3()
+{
+	var show = document.getElementById("show3");
 	show.innerHTML = "";
 }
