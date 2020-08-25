@@ -123,6 +123,28 @@ function validation()
 		return false;
 	}
 
+	var show = document.getElementById("show4");
+	var d = document.getElementById("day").value;
+	var m = document.getElementById("month").value;
+	var y = document.getElementById("year").value;
+	if( d != "" && m != "" && y != "")
+	{
+		if( d >= 1 && d <= 31 && m >= 1 && m <= 12 && y >= 1900 && y <= 2016 )
+		{
+			falg = true;
+		}
+		else
+		{
+			show.innerHTML = "Must be a valid number";
+			return false;		
+		}
+	}
+	else
+	{
+		show.innerHTML = "Cannot be empty";
+		return false;
+	}
+
 	return flag;
 
 }
@@ -142,5 +164,10 @@ function clicks1()
 function clicks3()
 {
 	var show = document.getElementById("show3");
+	show.innerHTML = "";
+}
+function clicks4()
+{
+	var show = document.getElementById("show");
 	show.innerHTML = "";
 }
