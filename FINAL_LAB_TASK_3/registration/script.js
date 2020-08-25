@@ -162,7 +162,8 @@ function validation()
 	var ssc = document.getElementById("ssc").checked;
 	var hsc = document.getElementById("hsc").checked;
 	var bsc = document.getElementById("bsc").checked;
-	if( ssc == true || hsc == true || bsc == true)
+	var bsc = document.getElementById("msc").checked;
+	if( ssc == true || hsc == true || bsc == true || msc == true)
 	{
 		falg = true;
 	}
