@@ -3,78 +3,74 @@
 <html>
     <head>
 	    <title>Form Table</title>
+	    <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
-		<form>
-			<table width="100%" border="1">
+		<form >
+			<table width="100%" border="1" action="registration.php" method="post" onsubmit="return validation()">
 				<tr height = "100px">
 				    <td colspan="3" align="center">PERSON PROFILE</td>
 				</tr>
 				<tr>
 				    <td width="20%">Name</td>
-					<td><input type="text" name="personname"></td>
-					<td width="15%"></td>
+					<td><input type="text" id="name" name="personname" onkeyup="clicks1()"></td>
+					<td width="15%" id = "show1"></td>
 				</tr>
 				<tr>
 				    <td width="20%">Email</td>
-					<td><input type="text" name="email"></td>
-					<td width="15%"></td>
+					<td><input type="text" id="email" name="email"></td>
+					<td width="15%" id="show2"></td>
 				</tr>
 				<tr>
 				    <td width="20%">Gender</td>
 					<td>
-					    <input type="radio" name="gender" >  Male 
-				        <input type="radio" name="gender" > Female
-				        <input type="radio" name="gender" > Other</td>
-					<td width="15%"></td>
+					    <input type="radio" id="male" name="gender" value="Male" onclick="clicks2()">  Male 
+				        <input type="radio" id="female" name="gender" value="Female" onclick="clicks3()"> Female
+				        <input type="radio" id="other" name="gender" value="Other" onclick="clicks4()"> Other</td>
+					<td width="15%" id="show3"></td>
 				</tr>
 				<tr>
 				    <td width="20%">Date of Birth</td>
 					<td>
-					    <input type="text" name="day" size="2">/
-						<input type="text" name="month" size="2">/
-						<input type="text" name="year" size="4">(dd/mm/yy)
+					    <input type="text" id="day" name="day" size="1" onkeyup="clicks5()">/
+						<input type="text" id="month" name="month" size="1" onkeyup="clicks6()">/
+						<input type="text" id="year" name="year" size="3" onkeyup="clicks7()">(dd/mm/yy)
 					</td>
-					<td width="15%"></td>
+					<td width="15%" id="show4"></td>
 				</tr>
 				<tr>
 				    <td width="20%">Blood Group</td>
 					<td>
-					    <select>
-					    	<option value="">None</option>
-				            <option>A+</option>
-				            <option>A-</option>
-				            <option>B+</option>
-				            <option>B-</option>
-							<option>O+</option>
-				            <option>O-</option>
-				            <option>AB+</option>
-				            <option>AB-</option>
+					    <select id="bloodgroup" name="bloodgroup" onclick="clicks8()">
+					    <option value="">None</option>
+			   			<option value="A+">A+</option>
+			   			<option value="A-">A-</option>
+				   		<option value="B+">B+</option>
+				   		<option value="B-">B-</option>
+				   		<option value="Ab+">AB+</option>
+				   		<option value="O+">O+</option>
+				   		<option value="O-">O-</option>
 			            </select>
 					</td>
-					<td width="15%"></td>
+					<td width="15%" id="show5"></td>
 				</tr>
 				<tr>
 				    <td width="20%">Degree</td>
 					<td>
-					    <input type="checkbox" name="degree"> SSC
-					    <input type="checkbox" name="degree"> HSC
-					    <input type="checkbox" name="degree"> BSc.
-					    <input type="checkbox" name="degree"> MSc.
+					    <input type="checkbox" id="ssc" name="ssc" value="SSC" onclick="clicks9()"> SSC
+					    <input type="checkbox" id="ssc" name="hsc" value="HSC" onclick="clicks10()"> HSC
+					    <input type="checkbox" id="ssc" name="bsc" value="BSc" onclick="clicks11()"> BSc.
+					    <input type="checkbox" id="ssc" name="msc" value="MSc" onclick="clicks12()"> MSc.
 					</td>
-					<td width="15%"></td>
-				</tr>
-				<tr>
-				    <td width="20%">User Id</td>
-					<td><input type="number" name="userid"></td>
-					<td width="15%"></td>
+					<td width="15%" id="show6"></td>
 				</tr>
 				<tr>
 				    <td width="20%">Photo</td>
-					<td colspan="2"><input type="file" name="image"></td>
+					<td colspan="2"><input type="file" id="picture" name="picture" onclick="clicks13()"></td>
+					<td id="show2"></td>
 				</tr>
 				<tr width="100%" height="23px">
-				    <td colspan="3"></td>
+				    <td colspan="3" id="show7"></td>
 				</tr>
 				<tr>
 				    <td colspan="3" align="right">
