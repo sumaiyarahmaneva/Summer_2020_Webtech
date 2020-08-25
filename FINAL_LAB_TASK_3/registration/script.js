@@ -157,6 +157,21 @@ function validation()
 		return false;
 	}
 
+
+	var show = document.getElementById("show6");
+	var ssc = document.getElementById("ssc").checked;
+	var hsc = document.getElementById("hsc").checked;
+	var bsc = document.getElementById("bsc").checked;
+	if( ssc == true || hsc == true || bsc == true)
+	{
+		falg = true;
+	}
+	else
+	{
+		show.innerHTML = "Must be one of them has to be selected";
+		return false;
+	}
+
 	return flag;
 
 }
@@ -184,6 +199,11 @@ function clicks4()
 	show.innerHTML = "";
 }
 function clicks5()
+{
+	var show = document.getElementById("show");
+	show.innerHTML = "";
+}
+function clicks6()
 {
 	var show = document.getElementById("show");
 	show.innerHTML = "";
