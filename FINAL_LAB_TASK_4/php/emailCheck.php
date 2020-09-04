@@ -1,17 +1,48 @@
 <?php 
-    session_start();
-    //require_once('../php/session_header.php');
-    require_once('../service/userService.php');
+	session_start();
+	require_once('../service/userService.php');
+	
+
+	if(!empty($_POST['email']))
+	{
+		$sta = Email($_POST['email']);
+		echo $sta;
+	}
+
+	if(isset($_POST['submit'])){
+		$id			= $_POST['id'];
+		$username 	= $_POST['username'];
+		$password 	= $_POST['password'];
+		$email 		= $_POST['email'];
+
+		if(empty($id) || empty($username) || empty($password) || empty($email)){
+			header('location: ../views/register.php?error=null_value');
+		}else{
+
+			if(empty(getByID($id)['id']))
+			{
+				$user = [
+					'id'=>$id,		
+					'username'=> $username,
+					'password'=> $password,
+					'email'=> $email
+				];
+
+				$status = insert($user);
+				echo "done";
+
+				if($status){
+					header('location: ../views/login.php?success=registration_done');
+				}else{
+					header('location: ../views/register.php?error=db_error');
+				}	
+			}
+			else
+				header('location: ../views/register.php?error=id_already_exist');
+			
+		}
+	}
 
 
-    //add user
-    if(isset($_POST['email'])){
-
-        $status=checkEmail($_POST['email']);
-        if($status)
-        {
-            echo "Email already taken";
-        }       
-    }
 
 ?>

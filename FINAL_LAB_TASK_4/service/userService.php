@@ -85,18 +85,18 @@
 
 
 	function Email($email){
-		$conn = dbConnection();
+		$con = dbConnection();
 
-		if(!$conn){
+		if(!$con){
 			echo "DB connection error";
 		}
 
 		$sql = "select * from users where email='{$email}'";
-		$result = mysqli_query($conn, $sql);
+		$result = mysqli_query($con, $sql);
 		$row = mysqli_fetch_assoc($result);
 		if(!empty($row['email']))
 		{
-			return "this email already exist";
+			return "This email already exist";
 		}
 		else
 		{
