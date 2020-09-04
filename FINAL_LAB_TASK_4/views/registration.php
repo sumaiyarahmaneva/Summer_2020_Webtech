@@ -61,10 +61,10 @@
 	<script type="text/javascript">
 		
 		var a = false;
-		var show1 = document.p("show1");
+		var show1 = document.getElementById("show1");
 		function f1()
 		{
-			var email = document.p("email").value;
+			var email = document.getElementById("email").value;
 			if( email != "")
 			{
 				var count=0;
@@ -89,19 +89,19 @@
 					if( last == "com" || last == "edu")
 					{
 						var xhttp = new XMLHttpRequest();
-						xhttp.open('POST', '../php/regCheck.php', true);
+						xhttp.open('POST', '../php/emailCheck.php', true);
 						xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 						xhttp.send('email='+email);
 
-						xhttp.orsc = function ()
+						xhttp.onreadystatechange = function ()
 						{
 							if(this.readyState == 4 && this.status == 200)
 							{
 								if(this.responseText != ""){
-									document.p('show1').innerHTML = this.responseText;
+									document.getElementById('show1').innerHTML = this.responseText;
 								}
 								else{
-									document.p('show1').innerHTML = "";
+									document.getElementById('show1').innerHTML = "";
 									a = true;
 								}
 								
@@ -127,14 +127,14 @@
 
 		function f2()
 		{
-			var show2 = document.p("show2");
+			var show2 = document.getElementById("show2");
 			if(a == true)
 			{
-				var id = document.p('id').value;
-				var username = document.p('username').value;
-				var email = document.p('email').value;
-				var password = document.p('password').value;
-				var submit = document.p('submit').value;
+				var id = document.getElementById('id').value;
+				var username = document.getElementById('username').value;
+				var email = document.getElementById('email').value;
+				var password = document.getElementById('password').value;
+				var submit = document.getElementById('submit').value;
 				if(id!="" && username!="" && password!="")
 				{
 					var xhttp = new XMLHttpRequest();
@@ -142,18 +142,18 @@
 					xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 					xhttp.send('id='+id+'&username='+username+'&password='+password+'&email='+email+'&submit='+submit);
 
-					xhttp.orsc = function ()
+					xhttp.onreadystatechange = function ()
 					{
 						if(this.readyState == 4 && this.status == 200)
 						{
 							if(this.responseText != "")
 							{
-								document.p('form').reset();
-								document.p('login').style.display = 'inline'
+								document.getElementById('form').reset();
+								document.getElementById('login').style.display = 'inline'
 							}
 							else
 							{
-								document.p('searchdata').innerHTML = "";
+								document.getElementById('searchdata').innerHTML = "";
 							}	
 						}	
 					}
