@@ -26,13 +26,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Login As Admin</title>
 </head>
 <body>
 
-	<form action="../php/logCheck.php" method="post">
+	<form action="../php/logCheckForAdmin.php" method="post">
 		<fieldset>
-			<legend>SignIn</legend>
+			<legend>Login As Admin</legend>
 			<table>
 				<tr>
 					<td>Username</td>
@@ -41,10 +41,6 @@
 				<tr>
 					<td>Password</td>
 					<td><input type="password" name="password"></td>
-				</tr>
-				<tr>
-					<td>Status</td>
-					<td><input type="text" name="password" id = "status"></td>
 				</tr>
 				<tr>
 					<td></td>
