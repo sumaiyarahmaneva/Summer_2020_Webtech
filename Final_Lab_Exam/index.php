@@ -6,7 +6,7 @@
 <body>
 
 	<h1 id='head2'>Blog First Page</h1>
-	<a href="views/registration.php">Login As Admin</a> |
-	<a href="views/login.php">Login As Author</a>
+	<a href="views/loginadmin.php">Login As Admin</a> |
+	<a href="views/loginauthor.php">Login As Author</a>
 </body>
 </html>

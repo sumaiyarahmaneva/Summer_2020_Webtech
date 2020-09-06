@@ -30,7 +30,7 @@
 </head>
 <body>
 
-	<form action="../php/logCheckForAdmin.php" method="post">
+	<form action="../php/logCheckAdmin.php" method="post">
 		<fieldset>
 			<legend>Login As Admin</legend>
 			<table>

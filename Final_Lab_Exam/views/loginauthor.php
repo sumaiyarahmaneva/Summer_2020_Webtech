@@ -30,7 +30,7 @@
 </head>
 <body>
 
-	<form action="../php/logCheckForAuthor.php" method="post">
+	<form action="../php/logCheckAuthor.php" method="post">
 		<fieldset>
 			<legend>Login As Author</legend>
 			<table>
