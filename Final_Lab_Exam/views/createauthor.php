@@ -1,5 +1,5 @@
 <?php
-	require_once '../php/session_header.php';
+	require_once('../php/session_header.php');
 	if (isset($_GET['error'])) {
 		
 		if($_GET['error'] == 'db_error'){
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<form action="" method="post">
+	<form action="../php/adminController.php" method="post">
 		<fieldset>
 			<legend>Create New Author</legend>
 			<table>
